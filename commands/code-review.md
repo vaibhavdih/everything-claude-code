@@ -1,10 +1,19 @@
 # Code Review
 
-Comprehensive security and quality review of uncommitted changes:
+Comprehensive security and quality review of uncommitted changes.
 
-1. Get changed files: git diff --name-only HEAD
+**IMPORTANT**: This command automatically delegates to framework-specific reviewers:
+- **Frappe projects** → Invokes `frappe-reviewer` agent
+- **Python projects** → Invokes `python-reviewer` agent
+- **Go projects** → Invokes `go-reviewer` agent
+- **Other projects** → Uses general `code-reviewer` agent
 
-2. For each changed file, check for:
+## Review Process
+
+1. Detect project type (Frappe, Python, Go, etc.)
+2. Invoke appropriate specialized agent
+3. Get changed files: git diff --name-only HEAD
+4. For each changed file, check for:
 
 **Security Issues (CRITICAL):**
 - Hardcoded credentials, API keys, tokens
