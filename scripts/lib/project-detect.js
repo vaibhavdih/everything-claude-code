@@ -83,6 +83,7 @@ const LANGUAGE_RULES = [
  */
 const FRAMEWORK_RULES = [
   // Python frameworks
+  { framework: 'frappe', language: 'python', markers: ['hooks.py', 'sites'], packageKeys: ['frappe'] },
   { framework: 'django', language: 'python', markers: ['manage.py'], packageKeys: ['django'] },
   { framework: 'fastapi', language: 'python', markers: [], packageKeys: ['fastapi'] },
   { framework: 'flask', language: 'python', markers: [], packageKeys: ['flask'] },
